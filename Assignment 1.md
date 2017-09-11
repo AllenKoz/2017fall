@@ -1,0 +1,3 @@
+I have taken nearly all of the required computer science classes, with the exception of Digital logic, projects and language processing. Before I transferred to New Paltz I went to Ulster. I took an intro to web programming class there and enjoyed it. We mostly went over HTML and CSS but we also did some JavaScript and some ruby on rails. 
+
+Web programming is one the programming skills I enjoy the most. I am not necessarily aiming for a web programming job but I would take it even the chance. Outside of that I would use the skills I learn to make different websites for fun. I don’t have any ideas for a site right now but I can’t say I wouldn’t make one for my friends so we could do something together on the site.
