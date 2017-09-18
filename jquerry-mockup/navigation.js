@@ -1,8 +1,10 @@
 $(function(){
     $("#header-placeholder").load("_header.html", function () {
-        $(".nav-link").removeClass("active");
-        $("#signup-link").addClass("active");
+        $("#nav-placeholder").load(navProperties.mainNav, function(){;
         
+        $(".nav-link").removeClass("active");
+        $(`#${navProperties.currentSection}-link`).addClass("active");
+        });
     } );
     
 
