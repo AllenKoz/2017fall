@@ -5,23 +5,32 @@ export class Quote {
 }
 
 export class Player {
-    name: string;
+    name: string = "Moshe Plotkin";
     quotes: Quote[] = [];
     score: number = 0;
 
     drawQuotes(){
-        $("#my-quotes").html(this.quotes.map(x=> `<li class="list-group-item">${x.text}</li>`).join(""))
+        $("#my-quotes").html(this.quotes.map(x=> `<li class="list-group-item">${x.text}</li>`).join(""));
+
     }
+    
 }
 
 export class Room {
-    players: Player[] = [];
+    players: Player[] = [new Player(), new Player()];
     dealer: Player;
     picture: string;
     quotes: Quote[] = [];
 
     drawPicture() {
         $("#picture").attr("src", this.picture);
+    }
+    drawQuotes(){
+        $("#played-quotes").html(this.quotes.map(x=> `<li class="list-group-item">${x.text}</li>`).join(""));
+    }
+    drawPlayers(){
+        $("#my-quotes").html(this.players.map(x=> `<li class="list-group-item">${x.name}</li>`).join(""));
+
     }
 }
 
@@ -46,6 +55,8 @@ const me = new Player();
 var i = 0;
 room.picture = game.pictures[i];
 room.drawPicture();
+room.drawQuotes();
+room.drawPlayers();
 
 me.quotes = game.quotes;
 me.drawQuotes();
