@@ -10,10 +10,10 @@ export class Player {
     score: number = 0;
 
     drawQuotes(){
-        $("#my-quotes").html(this.quotes.map(x=> `<li class="list-group-item">${x.text}</li>`).join(""));
-
+        $("#my-quotes").html(
+            this.quotes.map( x => `<li class="list-group-item">${x.text}</li>` ).join("")
+        );
     }
-    
 }
 
 export class Room {
@@ -26,11 +26,14 @@ export class Room {
         $("#picture").attr("src", this.picture);
     }
     drawQuotes(){
-        $("#played-quotes").html(this.quotes.map(x=> `<li class="list-group-item">${x.text}</li>`).join(""));
+        $("#played-quotes").html(
+            this.quotes.map( x => `<li class="list-group-item">${x.text}</li>` ).join("")
+        );
     }
     drawPlayers(){
-        $("#my-quotes").html(this.players.map(x=> `<li class="list-group-item">${x.name}</li>`).join(""));
-
+        $("#players").html(
+            this.players.map( x => `<li class="list-group-item">${x.name}</li>` ).join("")
+        );
     }
 }
 
