@@ -9,6 +9,6 @@ server.use("/old", handler.main);
 server.use("/game", gameController.router );
     
 
-server.listen(3001);
+server.listen(3000);
 
-console.log("http://localhost:3001");
+console.log("http://localhost:3000");
