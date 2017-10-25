@@ -5,7 +5,7 @@ export class Quote {
 }
 
 export class Player {
-    name: string = "";
+    name: string = "Moshe Plotkin";
     quotes: Quote[] = [];
     score: number = 0;
 
@@ -42,18 +42,15 @@ export class Game {
     pictures: string[] = [];
     quotes: Quote[] = [];
 
-        
     init() {
-       return $.when(
+        return $.when(
             $.getJSON("/game/pictures").done( data => {
                 this.pictures = data;
             }),
-            $.getJSON("/game/quotes").done( data => {
+            $.getJSON("/game/quotes").done( data =>{
                 this.quotes = data;
-
             })
         );
-
     }
 }
 
@@ -63,16 +60,16 @@ const room = new Room();
 const me = new Player();
 var i = 0;
 
-game.init().done(() => {
+game.init().done(()=>{
     room.picture = game.pictures[i];
     room.drawPicture();
     room.drawQuotes();
     room.drawPlayers();
-    
+
     me.quotes = game.quotes;
     me.drawQuotes();
-});
 
+});
 
 
 $("#cmd-flip").click(function(e){
