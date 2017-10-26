@@ -1,5 +1,5 @@
 const express = require("express");
-const handler = require("./httpHandler")
+const handler = require("./httpHandler");
 const gameController = require("./gameController");
 
 const server = express();
