@@ -1,7 +1,7 @@
 const express = require("express");
 const handler = require("./httpHandler");
 const gameController = require("./gameController");
-const bodyParser = require("bosy-parser");
+const bodyParser = require("body-parser");
 
 const server = express();
 
