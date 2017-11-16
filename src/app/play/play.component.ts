@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { Room, Player, Quote } from '../models/game';
-import { GameService} from '../models/game.service';
+import { GameService } from '../models/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-play',
@@ -10,7 +11,6 @@ import { GameService} from '../models/game.service';
 })
 export class PlayComponent implements OnInit {
 
-    
     room = new Room();
     me: Player;
 

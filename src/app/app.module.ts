@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { PlayComponent } from './play/play.component';
 import { IndexComponent } from './index/index.component';
-
 import { GameService } from './models/game.service';
 import { LoginComponent } from './login/login.component';
 
@@ -27,7 +26,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
         { path: "play", component: PlayComponent },
         { path: "home", component: IndexComponent },
-        { path: "login", component: IndexComponent },
+        { path: "login", component: LoginComponent },
         { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
