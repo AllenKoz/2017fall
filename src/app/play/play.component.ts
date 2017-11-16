@@ -12,6 +12,7 @@ export class PlayComponent implements OnInit {
     apiRoot = "//localhost:3001"
     room = new Room();
     me = new Player();
+
     constructor(private http: Http) { }
 
     ngOnInit() {
@@ -22,7 +23,7 @@ export class PlayComponent implements OnInit {
     }
 
     update(){
-       this.http.get(this.apiRoot + "/game/room/picture").subscribe( data => {
+        this.http.get(this.apiRoot + "/game/room/picture").subscribe( data => {
             this.room.picture = data.text();
         });
         this.http.get(this.apiRoot + "/game/room/quotes").subscribe( data =>{
@@ -40,13 +41,14 @@ export class PlayComponent implements OnInit {
         e.preventDefault();
         const data = { text: quote.text };
         this.http.post(this.apiRoot + "/game/room/quotes", data).subscribe(res=>{
-          this.me.quotes.splice(i, 1);
-          this.me.quotes.push(res.json());
-        });
+            this.me.quotes.splice(i, 1);
+            this.me.quotes.push( res.json() );            
+        })
     }
+
     chooseQuote(e: MouseEvent, i: number){
-      e.preventDefault();
-      this.room.chosenQuote = i;
-  }
+        e.preventDefault();
+        this.room.chosenQuote = i;
+    }
 
 }
