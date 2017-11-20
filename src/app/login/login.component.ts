@@ -4,9 +4,9 @@ import { Player } from '../models/game';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-loginr',
-  templateUrl: './loginr.component.html',
-  styleUrls: ['./loginr.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
