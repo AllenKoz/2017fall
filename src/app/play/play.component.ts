@@ -25,11 +25,8 @@ export class PlayComponent implements OnInit {
     }
 
     update(){
-        this.http.get(this.game.apiRoot + "/game/room/picture").subscribe( data => {
-            this.room.picture = data.text();
-        });
-        this.http.get(this.game.apiRoot + "/game/room/quotes").subscribe( data =>{
-            this.room.quotes = data.json();
+        this.http.get(this.game.apiRoot + "/game/room").subscribe( data =>{
+            this.room = data.json();
         });
     }
 
