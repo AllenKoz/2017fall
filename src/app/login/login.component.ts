@@ -9,16 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  name: string;
-  password: string;
-  
-  constructor(private game: GameService, private router: Router) { }
 
-  ngOnInit() {
-  }
+    name:string;
+    password: string;
 
-  login(){
-    this.game.login(this.name, this.password);
-  }
+
+    constructor(private game: GameService, private router: Router) { }
+
+    ngOnInit() {
+    }
+
+    login(){
+        this.game.login(this.name, this.password)
+    }
 
 }

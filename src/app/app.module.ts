@@ -4,7 +4,6 @@ import { RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
@@ -24,8 +23,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    FormsModule,
+    HttpModule, FormsModule,
     RouterModule.forRoot([
         { path: "play", component: PlayComponent },
         { path: "home", component: IndexComponent },

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Player } from './game';
 import { Http } from '@angular/http';
-import { Router } from '@angular/router/src/router';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class GameService {
@@ -15,7 +15,7 @@ export class GameService {
 
     login(name: string, password: string){
         this.http.post(this.apiRoot + "/game/room/players", { name, password }).subscribe(
-            data =>{
+            data => {
                 this.me = data.json();
                 this.http.get(this.apiRoot + "/game/quotes").subscribe( data =>{
                     this.me.quotes = data.json();
@@ -27,7 +27,6 @@ export class GameService {
             },
             () => {}
         )
-        
         
     }
 
