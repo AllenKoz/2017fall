@@ -3,6 +3,8 @@ import { Player } from './game';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 
+declare
+
 @Injectable()
 export class GameService {
 
@@ -11,6 +13,20 @@ export class GameService {
 
     constructor(private http: Http, private router: Router) {
         //this.login("Barak Obama");
+    }
+
+    loginFB(){
+        FB.login((response: any) => {
+            if (response.authResponse) {
+             console.log('Welcome!  Fetching your information.... ');
+             FB.api('/me', (response: any) =>{
+               console.log('Good to see you, ' + response.name + '.');
+               this.login(response.name, 'password')
+             });
+            } else {
+             console.log('User cancelled login or did not fully authorize.');
+            }
+        });
     }
 
     login(name: string, password: string){
