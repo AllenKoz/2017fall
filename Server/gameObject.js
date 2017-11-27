@@ -10,13 +10,12 @@ const game = {
     ],
     getNextPicture: ()=> game.pictures[iCurrentPicture++],
     quotes: quotes,
-    getNextQuote: ()=> game.quotes[(iCurrentQuote = iCurrentQuote + 1 % game.quotes.length)],
+    getNextQuote: ()=> game.quotes[(iCurrentQuote = (iCurrentQuote + 1) % game.quotes.length)],
     room: {
         picture: "",
-        quotes: [],
+        quotes: [{ text: "Start", player: "Start", chosen: true}],
         players: [],
         dealer: 0
-
     }
 }
 
