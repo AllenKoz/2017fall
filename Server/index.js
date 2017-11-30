@@ -3,6 +3,7 @@ const handler = require("./httpHandler");
 const gameController = require("./gameController");
 const bodyParser = require("body-parser");
 
+const port = 8081;
 const server = express();
 
 server.use(bodyParser.urlencoded());
@@ -16,7 +17,9 @@ server.use(function(req, res, next) {
 server.use("/client", express.static("./jquery-mockup"))
 server.use("/old", handler.main);
 server.use("/game", gameController.router );
+    
 
-server.listen(3001);
+//console.log(process.env);
+server.listen(port);
 
-console.log("http://localhost:3001");
+console.log(`http://localhost:${port}`);
