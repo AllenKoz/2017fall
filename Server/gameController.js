@@ -28,7 +28,7 @@ router
             let player = game.room.players.find(x=> x.fbid == req.body.fbid);
             if(!player){
                 player = { name: req.body.name, id: game.room.players.length, fbid: req.body.fbid, picture: req.body.picture };
-                game.room.players.push(player);    
+                game.room.players.push(player);                
             }
             res.status(201).send(player);
         }else{
