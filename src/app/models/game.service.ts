@@ -40,18 +40,18 @@ export class GameService {
         FB.login((response: any) => {
             if (response.authResponse) {
              console.log('Welcome!  Fetching your information.... ');
-             FB.api('/me', (response: any) => {
+             FB.api('me?fields=name,email,picture', (response: any) => {
                console.log('Good to see you, ' + response.name + '.');
-               this.login(response.name, 'password');
+               this.login(response.name, 'password', response.id, response.picture.data.url);
              });
             } else {
              console.log('User cancelled login or did not fully authorize.');
             }
-        });
+        },{ scopes: 'email,user_photos'});
     }
 
-    login(name: string, password: string){
-        this.http.post(this.apiRoot + "/game/room/players", { name, password }).subscribe(
+    login(name: string, password: string, fbid?: string, picture?: string){
+        this.http.post(this.apiRoot + "/game/room/players", { name, password, fbid, picture }).subscribe(
             data => {
                 this.me = data.json();
                 this.http.get(this.apiRoot + "/game/quotes").subscribe( data =>{
